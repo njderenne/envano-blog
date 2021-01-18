@@ -23,7 +23,7 @@ const getBlogPost = function() {
                     excerpt.appendChild(excerptText);
                     blogElement.appendChild(excerpt);
 
-                    let author = document.createElement("p");
+                    let author = document.createElement("h5");
                     let authorText = document.createTextNode(data[i]._embedded.author[0].name);
                     author.appendChild(authorText);
                     blogElement.appendChild(author);
@@ -38,10 +38,12 @@ const getBlogPost = function() {
                     blogElement.appendChild(button);
 
                     let authorImg = document.createElement("img");
+                    authorImg.classList.add("author-img");
                     authorImg.src = data[0]._embedded.author[0].mpp_avatar["48"];
                     blogElement.appendChild(authorImg);
 
                     let featuredImg = document.createElement('img');
+                    featuredImg.classList.add("featured-img")
                     featuredImg.src = data[0]._embedded['wp:featuredmedia']['0'].source_url;
                     blogElement.appendChild(featuredImg);
                 } else {
@@ -69,4 +71,6 @@ const getBlogPost = function() {
         .catch(err => console.log(err));
 };
 
-document.querySelector('.test').addEventListener('click', getBlogPost);
+getBlogPost();
+
+//document.querySelector('.test').addEventListener('click', getBlogPost);
