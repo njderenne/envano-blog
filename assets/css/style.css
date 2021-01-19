@@ -13,6 +13,10 @@ body {
     font-family: Helvetica, Arial, sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     display: grid;
     width: 88%;
@@ -49,6 +53,7 @@ body {
 
 .b0 h4 {
     display: grid;
+    font-size: 20px;
     grid-row: 1;
     grid-column: 2/span 3;
 }
@@ -71,9 +76,11 @@ body {
     display: grid;
     grid-row: 4;
     grid-column: 3;
+    align-items: center;
+    margin-left: -50px;
 }
 
-.b0 button {
+.b0 a {
     display: grid;
     grid-row: 5;
     grid-column: 2/span 3;
@@ -110,7 +117,7 @@ body {
     grid-column: 1;
 }
 
-.b1 button {
+.b1 a {
     display: grid;
     grid-row: 4;
     grid-column: 1;
@@ -148,7 +155,7 @@ body {
     grid-column: 1;
 }
 
-.b2 button {
+.b2 a {
     display: grid;
     grid-row: 4;
     grid-column: 1;
@@ -186,7 +193,7 @@ body {
     grid-column: 1;
 }
 
-.b3 button {
+.b3 a {
     display: grid;
     grid-row: 4;
     grid-column: 1;
@@ -224,7 +231,7 @@ body {
     grid-column: 1;
 }
 
-.b4 button {
+.b4 a {
     display: grid;
     grid-row: 4;
     grid-column: 1;
@@ -262,7 +269,7 @@ body {
     grid-column: 1;
 }
 
-.b5 button {
+.b5 a {
     display: grid;
     grid-row: 4;
     grid-column: 1;
@@ -321,10 +328,33 @@ button{
     border-radius: 4px;
     border: none;
     width: 30%;
-    padding: 8px 0px;
+    padding: 8px 8px;
 }
 
 button:hover {
     background-color: var(--secondary-color);
 }
 
+.pagination #previous-page {
+    color: #007c64;
+    font-weight: bold;
+    margin-left: 6%;
+    margin-bottom: 3%;
+    float: left;
+}
+
+.pagination #next-page {
+    color: #007c64;
+    float:right;
+    margin-right: 6%;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+
+.pagination a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
