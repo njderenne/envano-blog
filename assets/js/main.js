@@ -14,6 +14,11 @@ const getBlogPost = function() {
     fetch(envanoApi)
         .then(response => response.json())
         .then(data => {
+            if(data.length===0 ||data===undefined) {
+                let blogElement = document.getElementById("0");
+                let errorText = document.createTextNode("There are no blog posts at this time! Please check back later.");
+                blogElement.appendChild(errorText);
+            }
             //this will need to change to be dynamic
             let blogLength = data.length;
             let lastPage = Math.ceil(blogLength/7);
@@ -103,8 +108,6 @@ const getBlogPost = function() {
                     }
                 }
 
-            } else {
-                console.log('There are no more pages to this blog!');
             }
         })
         .catch(err => console.log(err));
