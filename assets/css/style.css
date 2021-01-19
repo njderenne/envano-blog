@@ -22,7 +22,7 @@ a {
     width: 88%;
     margin: 20px auto;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     justify-content: space-around;
     align-items: center;
     grid-gap: 40px;
