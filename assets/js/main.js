@@ -88,10 +88,12 @@ const getBlogPost = function() {
                         let title = document.createElement('h3');
                         let titleText = document.createTextNode(data[i].title.rendered);
                         title.appendChild(titleText);
+                        title.classList.add('title')
                         blogElement.appendChild(title);
     
                         let excerpt = document.createElement("p");
                         excerpt.innerHTML = (data[i].excerpt.rendered);
+                        excerpt.classList.add('excerpt');
                         blogElement.appendChild(excerpt);
 
                         let button = document.createElement('button');
@@ -100,10 +102,12 @@ const getBlogPost = function() {
                         let postLinkText = document.createTextNode('READ MORE');
                         button.appendChild(postLinkText);
                         postLink.appendChild(button);
+                        postLink.classList.add('post-link');
                         blogElement.appendChild(postLink);
     
                         let featuredImg = document.createElement('img');
                         featuredImg.src = data[i]._embedded['wp:featuredmedia']['0'].source_url;
+                        featuredImg.classList.add('sub-img');
                         blogElement.appendChild(featuredImg);
                     }
                 }
