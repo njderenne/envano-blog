@@ -14,16 +14,17 @@ const getBlogPost = function() {
     fetch(envanoApi)
         .then(response => response.json())
         .then(data => {
+            //runs a check to verify the data returned has data to display
             if(data.length===0 ||data===undefined) {
                 let blogElement = document.getElementById("0");
                 let errorText = document.createTextNode("There are no blog posts at this time! Please check back later.");
                 blogElement.appendChild(errorText);
             }
-            //this will need to change to be dynamic
+
             let blogLength = data.length;
             let lastPage = Math.ceil(blogLength/7);
             let pageLimit = 7;
-            
+            //hides or shows next/prev button based on current page
             if(currentPage===1) {
                 previousPageElement.classList.add("hidden");
             }
@@ -37,36 +38,41 @@ const getBlogPost = function() {
                 nextPageElement.classList.remove("hidden");
             }
             if(currentPage<=lastPage && currentPage>=1){
-
+                //loops through the data to fill the page with posts based on current page
                 for (let i = (currentPage-1)*pageLimit; i<pageLimit*(currentPage);i++){
                     let blogElement = document.getElementById(i-(7*(currentPage-1)));
-
+                    //stops the loop if there are no more posts to display
                     if(blogLength-(pageLimit*(currentPage-1))<pageLimit){
                         if(blogLength<=i){
                             return;
                         }
                     }
-
+                    //runs for the first element to be displayed on the page
                     if(i%7===0) {
+                        //creates and fills title element
                         let title = document.createElement('h2');
                         let titleText = document.createTextNode(data[i].title.rendered);
                         title.appendChild(titleText);
                         blogElement.appendChild(title);
     
+                        //creates and fills date element
                         let postDate = document.createElement('h4');
                         let postDateText = document.createTextNode(readableDate(data[i].date));
                         postDate.appendChild(postDateText);
                         blogElement.appendChild(postDate);
 
+                        //creates and fills post excerpt element
                         let excerpt = document.createElement("p");
                         excerpt.innerHTML = (data[i].excerpt.rendered);
                         blogElement.appendChild(excerpt);
     
+                        //creates and fills author element
                         let author = document.createElement("h5");
                         let authorText = document.createTextNode(data[i]._embedded.author[0].name);
                         author.appendChild(authorText);
                         blogElement.appendChild(author);
     
+                        //creates and fills button element for link
                         let button = document.createElement('button');
                         let postLink = document.createElement("a");
                         postLink.href = data[0].link;
@@ -75,27 +81,34 @@ const getBlogPost = function() {
                         postLink.appendChild(button);
                         blogElement.appendChild(postLink);
     
+                        //creates and fills author img element
                         let authorImg = document.createElement("img");
                         authorImg.classList.add("author-img");
                         authorImg.src = data[i]._embedded.author[0].mpp_avatar["48"];
                         blogElement.appendChild(authorImg);
     
+                        //creates and fills featured img element
                         let featuredImg = document.createElement('img');
                         featuredImg.classList.add("featured-img")
                         featuredImg.src = data[i]._embedded['wp:featuredmedia']['0'].source_url;
                         blogElement.appendChild(featuredImg);
-                    } else {
+                    }
+                    //runs for the last 6 posts to load onto the page 
+                    else {
+                        //creates and fills title element
                         let title = document.createElement('h3');
                         let titleText = document.createTextNode(data[i].title.rendered);
                         title.appendChild(titleText);
                         title.classList.add('title')
                         blogElement.appendChild(title);
     
+                        //creates and fills post excerpt element
                         let excerpt = document.createElement("p");
                         excerpt.innerHTML = (data[i].excerpt.rendered);
                         excerpt.classList.add('excerpt');
                         blogElement.appendChild(excerpt);
 
+                        //creates and fills button element for link
                         let button = document.createElement('button');
                         let postLink = document.createElement("a");
                         postLink.href = data[i].link;
@@ -105,6 +118,7 @@ const getBlogPost = function() {
                         postLink.classList.add('post-link');
                         blogElement.appendChild(postLink);
     
+                        //creates and fills featured img element
                         let featuredImg = document.createElement('img');
                         featuredImg.src = data[i]._embedded['wp:featuredmedia']['0'].source_url;
                         featuredImg.classList.add('sub-img');
