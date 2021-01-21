@@ -14,8 +14,8 @@ As a user, I can view blog posts through the Envano API which will populate 7 bl
 
 ## How to Use
 
-To view the application you click the "Code" drop down menu and select Download ZIP. Once the file has finished downloading, navigate to its download location and extract the files. Once the extraction is complete, open the folder and double click on the index.HTML file. The application will then render on your browser of choice.
+To view the application you click the "Code" drop down menu and select Download ZIP. Once the file has finished downloading, navigate to its download location and extract the files. Once the extraction is complete, open the folder and double click on the index.html file. The application will then render on your browser of choice.
 
 ## Future Changes
 
-Create more than one break point which could improve user experience across more devices. Increase modularization the JavaScript code to increase readability and decrease maintainance time.
+Create more than one break point which could improve user experience across more devices. Increase modularization of the JavaScript code to increase readability and decrease maintainance time.
