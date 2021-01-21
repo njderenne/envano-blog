@@ -137,7 +137,7 @@ a {
     grid-row: 2;
 }
 
-.b1 p {
+.b1 span {
     grid-row: 3;
 }
 
@@ -159,7 +159,7 @@ a {
     grid-row: 2;
 }
 
-.b2 p {
+.b2 span {
     grid-row: 3;
 }
 
@@ -180,7 +180,7 @@ a {
     grid-row: 2;
 }
 
-.b3 p {
+.b3 span {
     grid-row: 3;
 }
 
@@ -194,7 +194,7 @@ a {
 }
 
 .b4 img {
-    margin-top: 80px;
+    margin-top: 20px;
     grid-row: 1;
 }
 
@@ -202,7 +202,7 @@ a {
     grid-row: 2;
 }
 
-.b4 p {
+.b4 span {
     grid-row: 3;
 }
 
@@ -216,7 +216,7 @@ a {
 }
 
 .b5 img {
-    margin-top: 80px;
+    margin-top: 20px;
     grid-row: 1;
 }
 
@@ -224,7 +224,7 @@ a {
     grid-row: 2;
 }
 
-.b5 p {
+.b5 span {
     grid-row: 3;
 }
 
@@ -238,7 +238,7 @@ a {
 }
 
 .b6 img {
-    margin-top: 80px;
+    margin-top: 20px;
     grid-row: 1;
 }
 
@@ -246,7 +246,7 @@ a {
     grid-row: 2;
 }
 
-.b6 p {
+.b6 span {
     grid-row: 3;
 }
 
@@ -301,15 +301,21 @@ button:hover {
         height: 100%;
         object-fit: cover;
     }
+
+    .card {
+        height: 500px;
+    }
+
+    button {
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 1200px) {
     .container {
-        width: 88%;
-        margin: 20px auto;
         grid-template-columns: 1fr;
         grid-template-rows: 7(1fr);
-        grid-gap: 0px;
+        grid-gap: 80px;
     }
 
     .card {
@@ -388,16 +394,13 @@ button:hover {
     }
 
     .b1 {
+        margin-top: -25vh;
         grid-row: 2;
     }
     
-    .b1 p {
-        padding-bottom: 15px;
-    }
-    
     .b2 {
+        margin-top: -28vh;
         grid-row: 3;
-        padding-bottom: 80px;
     }
     
     .b3 {
@@ -414,5 +417,6 @@ button:hover {
     
     .b6 {
         grid-row: 7;
+        padding-bottom: 30px;
     }
 }

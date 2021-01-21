@@ -103,7 +103,7 @@ const getBlogPost = function() {
                         blogElement.appendChild(title);
     
                         //creates and fills post excerpt element
-                        let excerpt = document.createElement("p");
+                        let excerpt = document.createElement("span");
                         excerpt.innerHTML = (data[i].excerpt.rendered);
                         excerpt.classList.add('excerpt');
                         blogElement.appendChild(excerpt);
