@@ -14,9 +14,7 @@ As a user, I can view blog posts through the Envano API which will populate 7 bl
 
 ## How to Use
 
-The site is hosted on GitHub at: https://njderenne.github.io/envano-blog/
-
-Alternatively you can click the "Code" drop down menu and select Download ZIP. Once the file has finished downloading, navigate to its download location and extract the files. Once the extraction is complete, open the folder and double click on the index.HTML file. The application will then render on your browser of choice.
+To view the application you click the "Code" drop down menu and select Download ZIP. Once the file has finished downloading, navigate to its download location and extract the files. Once the extraction is complete, open the folder and double click on the index.HTML file. The application will then render on your browser of choice.
 
 ## Future Changes
 
