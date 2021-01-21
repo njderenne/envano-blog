@@ -20,4 +20,4 @@ Alternatively you can click the "Code" drop down menu and select Download ZIP. O
 
 ## Future Changes
 
-Create more than one break point which could improve user experience across move devices. Increase modularization the JavaScript code to increase readability and decrease maintainance time.
+Create more than one break point which could improve user experience across more devices. Increase modularization the JavaScript code to increase readability and decrease maintainance time.
