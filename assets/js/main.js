@@ -129,7 +129,13 @@ const getBlogPost = function() {
 
             }
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.log(err);
+            let blogElement = document.getElementById("0");
+            let errorText = document.createTextNode("Something went wrong during the request. Please try again!");
+            blogElement.appendChild(errorText);
+
+        });
 };
 
 const nextPage = function(){
