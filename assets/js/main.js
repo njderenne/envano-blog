@@ -41,10 +41,11 @@ const getBlogPost = function() {
                 //loops through the data to fill the page with posts based on current page
                 for (let i = (currentPage-1)*pageLimit; i<pageLimit*(currentPage);i++){
                     let blogElement = document.getElementById(i-(7*(currentPage-1)));
+                    blogElement.classList.remove("hidden");
                     //stops the loop if there are no more posts to display
                     if(blogLength-(pageLimit*(currentPage-1))<pageLimit){
                         if(blogLength<=i){
-                            return;
+                            blogElement.classList.add("hidden");
                         }
                     }
                     //runs for the first element to be displayed on the page
@@ -94,7 +95,7 @@ const getBlogPost = function() {
                         blogElement.appendChild(featuredImg);
                     }
                     //runs for the last 6 posts to load onto the page 
-                    else {
+                    else if(!blogElement.classList.contains("hidden")){
                         //creates and fills title element
                         let title = document.createElement('h3');
                         let titleText = document.createTextNode(data[i].title.rendered);
